@@ -101,37 +101,39 @@ const TextField = forwardRef<any, TextFieldProps>(
 
     return (
       <Box
-        mb={16}
+        // mb={16}
         opacity={disabled ? 0.7 : 1}
         style={[styles.inputContainerStyle, containerStyle]}
       >
-        <Box flexDirection={'row'} alignItems="center">
-          <Text
-            color={
-              labelColor ? labelColor : disabled ? colors.gray : colors.text
-            }
-          >
-            {label}
-            {isOptional && (
-              <Text color={disabled ? colors.gray : colors.text}>
-                {' (optional)'}
-              </Text>
+        {label && (
+          <Box flexDirection={'row'} alignItems="center">
+            <Text
+              color={
+                labelColor ? labelColor : disabled ? colors.gray : colors.text
+              }
+            >
+              {label}
+              {isOptional && (
+                <Text color={disabled ? colors.gray : colors.text}>
+                  {' (optional)'}
+                </Text>
+              )}
+            </Text>
+            {toolTip && (
+              <Box onPress={onPressToolTip} style={toolTipStyle}>
+                {React.isValidElement(toolTip)
+                  ? toolTip
+                  : React.createElement(toolTip)}
+              </Box>
             )}
-          </Text>
-          {toolTip && (
-            <Box onPress={onPressToolTip} style={toolTipStyle}>
-              {React.isValidElement(toolTip)
-                ? toolTip
-                : React.createElement(toolTip)}
-            </Box>
-          )}
-        </Box>
+          </Box>
+        )}
         <Box
           flexDirection={'row'}
           alignItems={'center'}
           justifyContent={'space-between'}
           w={'100%'}
-          mb={12}
+          // mb={12}
           style={[
             styles.containerInput,
             !!error && { borderColor: colors.error },
@@ -172,9 +174,6 @@ const TextField = forwardRef<any, TextFieldProps>(
             </Box>
           )}
         </Box>
-        {(!isEmpty(hint) || !isEmpty(error)) && (
-          <Text color={colors.error}>{error || hint}</Text>
-        )}
       </Box>
     );
   }
@@ -200,9 +199,9 @@ const styles = StyleSheet.create({
     lineHeight: 24,
   },
   containerInput: {
-    borderBottomWidth: 1,
-    borderColor: '#000',
-    borderWidth: 1,
+    // borderBottomWidth: 1,
+    // borderColor: '#000',
+    // borderWidth: 1,
     borderRadius: 6,
   },
   mgBottom: {

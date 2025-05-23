@@ -2,7 +2,8 @@ import { DarkTheme, DefaultTheme } from '@react-navigation/native';
 
 export const lightColors = {
   background: '#FFFFFF',
-  primary: '#D72638',
+  // primary: '#D72638',
+  primary: '#28a745',
   primaryLight: '#FEE3D0',
   secondary: '#2C2C54',
   tertiary: '#A8C686',
@@ -10,7 +11,7 @@ export const lightColors = {
   border2: '#E3E3E3',
   white: '#FFFFFF',
   gray: '#363636',
-  green: '#07CA4A',
+  green: '#28a745',
   error: '#D70015',
 };
 
@@ -26,7 +27,8 @@ export const lightTheme = {
 
 export const darkColors: ColorType = {
   background: '#1F1F1F',
-  primary: '#D72638',
+  // primary: '#D72638',
+  primary: '#28a745',
   primaryLight: '#332C24',
   secondary: '#2C2C54',
   tertiary: '#A8C686',

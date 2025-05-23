@@ -7,6 +7,8 @@ import 'react-native-reanimated';
 import { QueryClientProvider } from '@tanstack/react-query';
 import initI18n from '@/i18n/config';
 
+import 'react-native-get-random-values';
+
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { darkTheme, lightTheme } from '@/theme/colors';
 import { ThemeProvider } from '@react-navigation/core';
@@ -43,6 +45,11 @@ export default function RootLayout() {
       <ThemeProvider value={colorScheme === 'dark' ? darkTheme : lightTheme}>
         <Stack>
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          <Stack.Screen name="wallet" options={{ headerShown: false }} />
+          <Stack.Screen
+            name="incomeAndExpense"
+            options={{ headerShown: false }}
+          />
           <Stack.Screen name="+not-found" />
         </Stack>
         <StatusBar style="auto" />

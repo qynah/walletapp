@@ -24,18 +24,46 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
+          title: 'Thu/chi',
           tabBarIcon: ({ color }) => (
-            <Ionicons size={28} name="home" color={color} />
+            <Ionicons name="document-text-outline" size={24} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="addMoney"
+        options={{
+          title: 'Nhập vào',
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="add-circle-outline" size={24} color={color} />
+          ),
+          headerShown: false,
+        }}
+      />
+      <Tabs.Screen
+        name="wallets"
+        options={{
+          title: 'Ví của tôi',
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="wallet-outline" size={24} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="report"
+        options={{
+          title: 'Thống kê',
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="pie-chart-outline" size={24} color={color} />
           ),
         }}
       />
       <Tabs.Screen
         name="explore"
         options={{
-          title: 'Explore',
+          title: 'Khác',
           tabBarIcon: ({ color }) => (
-            <Ionicons size={28} name="code" color={color} />
+            <Ionicons name="ellipsis-horizontal" size={24} color={color} />
           ),
         }}
       />

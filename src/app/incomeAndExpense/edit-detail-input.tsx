@@ -1,0 +1,28 @@
+import { CustomHeader } from '@/components/common/CustomHeader/CustomHeader';
+import { EditIncomeAndExpense } from '@/components/incomeAndExpense/EditIncomeAndExpense';
+import { useFocusEffect } from 'expo-router';
+import React, { useCallback, useState } from 'react';
+
+import { useTranslation } from 'react-i18next';
+import { View } from 'react-native';
+
+export default function EditDetailInputScreen() {
+  const [active, setActive] = useState<'left' | 'right'>('left');
+  // useFocusEffect(
+  //   useCallback(() => {
+  //     setActive('left');
+  //   }, [])
+  // );
+
+  return (
+    <View>
+      <CustomHeader
+        leftTitle="Tiền chi"
+        rightTitle="Tiền thu"
+        active={active}
+        onChange={setActive}
+      />
+      <EditIncomeAndExpense active={active} setActive={setActive} />
+    </View>
+  );
+}
